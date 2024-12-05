@@ -9,14 +9,13 @@ Key Steps to Use JDBC
 Load the JDBC driver class for the database you are using.
 Example for MySQL:
 
-java
-Copy code
 Class.forName("com.mysql.cj.jdbc.Driver");
+
 2. Establish a Connection
 Use the DriverManager to create a connection to the database.
 
-java
-Copy code
+
+
 Connection connection = DriverManager.getConnection(
     "jdbc:mysql://localhost:3306/your_database_name", 
     "your_username", 
@@ -27,29 +26,23 @@ Replace your_database_name, your_username, and your_password with actual values.
 3. Create a Statement
 Use the Connection object to create a Statement for executing SQL queries.
 
-java
-Copy code
 Statement statement = connection.createStatement();
 4. Execute SQL Queries
 Use the Statement object to execute queries and retrieve results.
 
 For SELECT Queries:
-java
-Copy code
+
 ResultSet resultSet = statement.executeQuery("SELECT * FROM table_name");
 while (resultSet.next()) {
     System.out.println("Column Data: " + resultSet.getString("column_name"));
 }
 For INSERT/UPDATE/DELETE Queries:
-java
-Copy code
+
 int rowsAffected = statement.executeUpdate("INSERT INTO table_name VALUES (value1, value2)");
 System.out.println("Rows affected: " + rowsAffected);
 5. Close the Resources
 Always close the database resources to avoid memory leaks.
 
-java
-Copy code
 resultSet.close();   // Close ResultSet (if applicable)
 statement.close();   // Close Statement
 connection.close();  // Close Connection
@@ -62,8 +55,6 @@ ResultSet: Holds the data returned by SELECT queries.
 Example Program
 Here’s a simple example to fetch data from a database:
 
-java
-Copy code
 import java.sql.*;
 
 public class JdbcExample {
