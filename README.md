@@ -7,13 +7,12 @@ JDBC (Java Database Connectivity) is an API (Application Programming Interface) 
 Key Steps to Use JDBC
 1. Load the JDBC Driver
 Load the JDBC driver class for the database you are using.
-Example for MySQL:
 
+Example for MySQL:
 Class.forName("com.mysql.cj.jdbc.Driver");
 
 2. Establish a Connection
 Use the DriverManager to create a connection to the database.
-
 
 
 Connection connection = DriverManager.getConnection(
@@ -98,3 +97,5 @@ Use connection pooling for better performance in large applications.
 References
 JDBC Documentation
 MySQL Connector/J
+
+
